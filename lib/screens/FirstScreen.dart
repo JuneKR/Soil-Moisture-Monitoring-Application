@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+import 'package:project/main.dart';
+import 'package:project/widget/HeaderWidget.dart';
+import 'package:project/widget/ButtonWidget.dart';
+import 'package:project/screens/SecondScreen.dart';
+
+class FirstScreen extends StatefulWidget {
+  @override
+  _FirstScreenState createState() => _FirstScreenState();
+}
+
+class _FirstScreenState extends State<FirstScreen> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    key: scaffoldKey,
+    appBar: AppBar(
+      title: Text(MyApp.title),
+      centerTitle: true,
+    ),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          HeaderWidget(title: 'ดิน'),
+          ButtonWidget(
+            text: 'click to start',
+            onClicked: () => Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondScreen()),
+            ),
+          ),
+        ],
+      )
+    )
+  );
+}
+
+// class FirstScreen extends StatelessWidget {
+//   const FirstScreen({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Dashboard'),
+//         backgroundColor: Colors.green,
+//       ),
+//       body: Center(
+//         child: ElevatedButton(
+//           onPressed: () {
+//             // Navigate to the second screen using a named route.
+//             Navigator.pushNamed(context, '/second');
+//           },
+//           child: const Text('About us')
+//         ),
+//       ),
+//     );
+//   }
+// }
