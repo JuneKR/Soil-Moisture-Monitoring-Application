@@ -9,14 +9,20 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard'),
-      ),
+      /* Display AppBar */
+      // appBar: AppBar(
+      //   title: const Text('Dashboard'),
+      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const HeaderWidget(title: 'ดิน'),
+            Image.asset(
+              'assets/images/logo.png',
+              height: 150,
+              width: 150,
+            ),
+            // const HeaderWidget(title: 'ดิน'),
             const Text(
               'CHOOSE YOUR TREE',
               textAlign: TextAlign.center,

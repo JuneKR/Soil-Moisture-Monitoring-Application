@@ -4,7 +4,6 @@ import 'package:project/screens/MainPage.dart';
 import 'package:project/screens/DashBoard.dart';
 import 'package:project/screens/Tree1Page.dart';
 
-
 void main() {
   runApp(MyApp());
 }

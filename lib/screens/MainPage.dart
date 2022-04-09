@@ -4,6 +4,7 @@ import 'package:project/widget/HeaderWidget.dart';
 import 'package:project/widget/ButtonWidget.dart';
 import 'package:project/screens/DashBoard.dart';
 
+
 class MainPage extends StatefulWidget {
   @override
   _MainPage createState() => _MainPage();
@@ -14,15 +15,21 @@ class _MainPage extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
     key: scaffoldKey,
-    appBar: AppBar(
-      title: Text(MyApp.title),
-      centerTitle: true,
-    ),
+    /* Display AppBar */
+    // appBar: AppBar(
+    //   title: Text(MyApp.title),
+    //   centerTitle: true,
+    // ),
     body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          HeaderWidget(title: 'ดิน'),
+          // HeaderWidget(title: 'ดิน'),
+          Image.asset(
+            'assets/images/logo.png',
+            height: 350,
+            width: 350,
+          ),
           ButtonWidget(
             text: 'click to start',
             onClicked: () => Navigator.pushNamed(context, '/dashboard'),

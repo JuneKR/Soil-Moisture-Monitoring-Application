@@ -8,15 +8,21 @@ import 'package:getwidget/getwidget.dart';
 class Tree1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-      title: const Text('Tree 1'),
-      centerTitle: true,
-    ),
+    /* Display AppBar */
+    // appBar: AppBar(
+    //   title: const Text('Tree 1'),
+    //   centerTitle: true,
+    // ),
       body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const HeaderWidget(title: 'ดิน'),
+              Image.asset(
+                'assets/images/logo.png',
+                height: 150,
+                width: 150,
+              ),
+              // const HeaderWidget(title: 'ดิน'),
               const Text(
                 'Soil moisture of TREE 1',
                 textAlign: TextAlign.center,
@@ -35,12 +41,16 @@ class Tree1Page extends StatelessWidget {
                 backgroundColor: Colors.black26,
                 progressBarColor: Colors.amber,
               ),
+
+              /* Soil Moisture Status */
               const Text(
                 'Soil Moisture Is Relatively Low',
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontWeight: FontWeight.normal),
               ),
+
+              /* Should Return Watering Status -> Failed water not enough or success */
               const SizedBox(height: 24),
               ButtonWidget(
                 text: 'PRESS TO WATER THE PLANTS',
