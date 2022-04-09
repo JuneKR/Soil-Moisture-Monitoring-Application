@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project/widget/HeaderWidget.dart';
 import 'package:project/widget/ButtonWidget.dart';
-import 'package:project/screens/ThirdScreen.dart';
+import 'package:project/screens/Tree1Page.dart';
 
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({Key? key}) : super(key: key);
+class DashBoard extends StatelessWidget {
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +16,28 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            HeaderWidget(title: 'ดิน'),
+            const HeaderWidget(title: 'ดิน'),
+            const Text(
+              'CHOOSE YOUR TREE',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(fontWeight: FontWeight.normal),
+            ),
             const SizedBox(height: 24),
             ButtonWidget(
               text: 'Tree 1',
-              onClicked: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ThirdScreen()),
-              ),
+              onClicked: () => Navigator.pushNamed(context, '/tree1'),
+              // onClicked: () => Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => Tree1Page()),
+              // ),
             ),
             const SizedBox(height: 24),
             ButtonWidget(
               text: 'Tree 2',
               onClicked: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SecondScreen()),
+                MaterialPageRoute(builder: (context) => DashBoard()),
               ),
             ),
             const SizedBox(height: 24),
@@ -38,7 +45,7 @@ class SecondScreen extends StatelessWidget {
               text: 'Tree 3',
               onClicked: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SecondScreen()),
+                MaterialPageRoute(builder: (context) => DashBoard()),
               ),
             ),
             const SizedBox(height: 24),
@@ -46,14 +53,14 @@ class SecondScreen extends StatelessWidget {
               text: 'About us',
               onClicked: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SecondScreen()),
+                MaterialPageRoute(builder: (context) => DashBoard()),
               ),
             ),
             const SizedBox(height: 24),
             ButtonWidget(
               text: '< Home',
-              onClicked: () => Navigator.pop(context),
-            ),
+              onClicked: () => Navigator.pushNamed(context, '/main'),
+            )
           ],
         )
       ),

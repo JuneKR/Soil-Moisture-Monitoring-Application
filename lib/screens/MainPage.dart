@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:project/main.dart';
 import 'package:project/widget/HeaderWidget.dart';
 import 'package:project/widget/ButtonWidget.dart';
-import 'package:project/screens/SecondScreen.dart';
+import 'package:project/screens/DashBoard.dart';
 
-class FirstScreen extends StatefulWidget {
+class MainPage extends StatefulWidget {
   @override
-  _FirstScreenState createState() => _FirstScreenState();
+  _MainPage createState() => _MainPage();
 }
 
-class _FirstScreenState extends State<FirstScreen> {
+class _MainPage extends State<MainPage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -25,10 +25,12 @@ class _FirstScreenState extends State<FirstScreen> {
           HeaderWidget(title: 'ดิน'),
           ButtonWidget(
             text: 'click to start',
-            onClicked: () => Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondScreen()),
-            ),
+            onClicked: () => Navigator.pushNamed(context, '/dashboard'),
+            // onClicked: () => Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => SecondScreen()),
+            //   // '/a'
+            // ),
           ),
         ],
       )
