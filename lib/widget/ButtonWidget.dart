@@ -21,5 +21,7 @@ class ButtonWidget extends StatelessWidget {
     textColor: Colors.white,
     shape: StadiumBorder(),
     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+    minWidth: 150,
+    height: 10,
   );
 }

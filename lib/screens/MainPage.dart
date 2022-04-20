@@ -6,6 +6,8 @@ import 'package:project/screens/DashBoard.dart';
 
 
 class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   _MainPage createState() => _MainPage();
 }

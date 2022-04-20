@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project/screens/AddTree.dart';
 import 'package:project/widget/HeaderWidget.dart';
 import 'package:project/widget/ButtonWidget.dart';
 import 'package:project/screens/Tree1Page.dart';
+
 
 class DashBoard extends StatelessWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -31,36 +33,38 @@ class DashBoard extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             ButtonWidget(
-              text: 'Tree 1',
-              onClicked: () => Navigator.pushNamed(context, '/tree1'),
+              text: 'Tree',
+              onClicked: () => Navigator.pushNamed(context, '/tree'),
               // onClicked: () => Navigator.push(
               //   context,
               //   MaterialPageRoute(builder: (context) => Tree1Page()),
               // ),
             ),
+            // const SizedBox(height: 24),
+            // ButtonWidget(
+            //   text: 'Tree 2',
+            //   onClicked: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => DashBoard()),
+            //   ),
+            // ),
+            // const SizedBox(height: 24),
+            // ButtonWidget(
+            //   text: 'Tree 3',
+            //   onClicked: () => Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => DashBoard()),
+            //   ),
+            // ),
             const SizedBox(height: 24),
             ButtonWidget(
-              text: 'Tree 2',
-              onClicked: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DashBoard()),
-              ),
-            ),
-            const SizedBox(height: 24),
-            ButtonWidget(
-              text: 'Tree 3',
-              onClicked: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DashBoard()),
-              ),
+              text: 'Add Tree',
+              onClicked: () => Navigator.pushNamed(context, '/add'),
             ),
             const SizedBox(height: 24),
             ButtonWidget(
               text: 'About us',
-              onClicked: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => DashBoard()),
-              ),
+              onClicked: () => Navigator.pushNamed(context, '/about'),
             ),
             const SizedBox(height: 24),
             ButtonWidget(
@@ -73,3 +77,4 @@ class DashBoard extends StatelessWidget {
     );
   }
 }
+
