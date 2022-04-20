@@ -19,6 +19,7 @@ class _AddTreeState extends State<AddTree> {
 
   late String title;
   late String moisture;
+  late int pump;
   
   void writeData() async {
     _form.currentState?.save();
@@ -27,13 +28,15 @@ class _AddTreeState extends State<AddTree> {
     // which we will get in “Add Realtime
     // Database” step with DatabaseURL
     var url = "https://soil-moisture-monitoring-app-default-rtdb.firebaseio.com/"+"data.json";
-
+    // var url = "https://soil-moisture-monitoring-app-default-rtdb.firebaseio.com/";
     // (Do not remove “data.json”,keep it as it is)
     try {
       final response = await http.post(
         Uri.parse(url),
-        body: json.encode({"title": title,"moisture": moisture}),
+        body: json.encode({"title": title,"moisture": moisture,"pump": pump}),
       );
+      print(response);
+      print(response.body);
     } catch (error) {
       rethrow;
     }
@@ -74,22 +77,38 @@ class _AddTreeState extends State<AddTree> {
                       hintText: "Enter Moisture Content"),
                   onSaved: (value) {
                     moisture = value!;
+                    pump = 0;
                   },
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                ElevatedButton(
-                    onPressed: writeData,
-                    child: const Text(
-                      "Submit",
-                      style: TextStyle(color: Colors.white),
-                      textAlign: TextAlign.center,
-                    )),
+                SizedBox(
+                  width: 140,
+                  child: ElevatedButton(
+                      style:ButtonStyle(
+                          foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  side: BorderSide(color: Colors.blue)
+                              )
+                          )
+                      ),
+                      onPressed: writeData,
+                      child: const Text(
+                        "SUBMIT",
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                        textAlign: TextAlign.center,
+                      )
+                  ),
+                ),
+
                 /* End Form 1 */
                 const SizedBox(height: 24),
                 ButtonWidget(
-                  text: '< Home',
+                  text: 'Home',
                   onClicked: () => Navigator.pushNamed(context, '/main'),
                 ),
                 const SizedBox(height: 24),
